@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clip board event</title>
+</head>
+<body>
+    <input type="text">
+    <p id="demo"></p>
+
+    <script>
+        // all clipboard event 
+        // copy
+        // cut
+        //paste
+
+        const x = document.querySelector('input');
+        const demo = document.getElementById('demo');
+
+        x.addEventListener('copy', function(){
+            console.log('text copied');
+            demo.innerText = "text copied successful"
+        })
+        x.addEventListener('cut', function(){
+            console.log('text cut');
+            demo.innerText = "text cut successful"
+        })
+        x.addEventListener('paste', function(){
+            console.log('text paste');
+            demo.innerText = "text paste successful"
+        })
+    </script>
+</body>
+</html>
