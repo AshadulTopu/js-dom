@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+<body>
+    <button class="save-btn">Save</button>
+    <p class="msg"></p>
+
+    <script>
+        const SaveBtn = document.querySelector('.save-btn');
+        const Msg = document.querySelector('.msg');
+
+        SaveBtn.addEventListener('click', startClock)
+
+        function startClock(){
+            let date = new Date()
+
+            let hours = date.getHours()
+            let seconds = date.getSeconds()
+            let minutes = date.getMinutes()
+
+            seconds = FormatTime(seconds)
+            minutes = FormatTime(minutes)
+
+            let time = hours +":"+ minutes + ":" + seconds
+
+            Msg.textContent = time
+
+            setInterval(startClock, 1000)
+        }
+
+        function FormatTime(value){
+            if(value <10){
+                value = '0' + value
+            }
+            return value
+        }
+
+
+    </script>
+</body>
+</html>

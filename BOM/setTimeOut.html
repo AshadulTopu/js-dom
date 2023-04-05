@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetTimeOut() & setInterval()</title>
+</head>
+<body>
+    
+    <button class="save-btn">Save</button>
+    <p class="msg"></p>
+    <script>
+        // setTimeout() :- work for doing any work after specific time.
+        // setInterval() :- work for doing any work repetitively after specific time. 
+
+        // setTimeout(()=>{
+        //     console.log("Hello");
+        // }, 5000)
+
+        const saveBtn = document.querySelector('.save-btn');
+        const showMsg = document.querySelector('.msg');
+
+        // saveBtn.addEventListener('click', showData)
+        // function showData(){
+        //     showMsg.textContent = "Registration Successful";
+        //     setTimeout(()=>{
+        //         showMsg.textContent = ''
+        //     }, 3000)
+        // }
+
+        saveBtn.addEventListener('click', Count)
+        function Count(){
+            let Count = 0
+            
+            showMsg.textContent =Count
+            setInterval(()=>{
+                Count++
+                showMsg.textContent =Count
+                console.log(Count);
+            }, 3000)
+        }
+    </script>
+</body>
+</html>
